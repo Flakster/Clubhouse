@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_twit, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /posts
@@ -20,6 +20,10 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    unless user_signed_in? && current_user.id == @post.user_id
+      flash[:alert] = 'Can\'t do that'
+      redirect_to root_path
+    end 
   end
 
   # POST /posts
