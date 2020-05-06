@@ -10,6 +10,27 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div>
+        <p><%= notice %></p>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div>
+        <p><%= alert %></p>
+      </div>
+    <% end %>
+    <div class="menu">
+        <%= link_to 'New Post', new_post_path  %>
+        <% if user_signed_in? %>
+            <span>Logged in as:</span>   
+            <%= link_to current_user.username, edit_user_registration_path  %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+        <% else %>
+          <%= link_to 'Sign In', new_user_session_path %>
+          <%= link_to 'Sign Up', new_user_registration_path %>
+        <% end %>
+		</div>
     <%= yield %>
   </body>
 </html>
