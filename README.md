@@ -1,6 +1,6 @@
 # Club House
 
-> This project is completed by Carlos Santamaría and Oscar Alfredo Gómez Elizarrarás, in partial requirements of the Microverse cirriculum. 
+> This project is completed by Carlos Santamaría and Oscar Alfredo Gómez Elizarrarás, in partial requirements of the Microverse cirriculum.
 
 ---
 
